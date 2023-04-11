@@ -12,7 +12,9 @@ function solution (number) {
 ```
  
  
+ --- 
 [평균 구하기]
+ <br>
 ![image](https://user-images.githubusercontent.com/38232501/231174791-d3909686-c5e4-48d4-9e3e-7685d3a36809.png)
 
 내 답
