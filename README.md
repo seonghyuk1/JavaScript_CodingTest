@@ -1,7 +1,11 @@
 # JavaScript_CodingTest
 
 ## 레벨0
+
 https://velog.io/@tjdgur/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-Lv.0-%ED%86%B5%ED%95%A9%EC%A0%95%EB%A6%AC
+
+## 레벨 0 정답률 60% 이하 문제
+
 ---
 ## 레벨1
 
