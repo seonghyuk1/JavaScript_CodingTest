@@ -9,6 +9,7 @@ https://velog.io/@tjdgur/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-
 [분수의 덧셈] <br>
 ![image](https://user-images.githubusercontent.com/38232501/233602930-216e64e0-c259-4e41-bb3a-09d72e2bd8e8.png)
 
+```
 function solution(numer1, denom1, numer2, denom2) {
    // // 최소 공배수 구하기
    // lcm = 1;
@@ -31,12 +32,12 @@ function solution(numer1, denom1, numer2, denom2) {
    }
 	    return [x/maxNum, y/maxNum]
 }
-
+```
 <br>
 
 [다항식 더하기]
 
-
+```
 function solution(polynomial) {
     const arr = polynomial.split(" + ");
     
@@ -60,7 +61,7 @@ function solution(polynomial) {
 
     return answer.join(' + ')
 }
-
+```
 
 || or연산자에서
 map을 통해 공백으로 다 바뀌었을 때, 공백값은 false라고 취급 되므로
