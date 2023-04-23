@@ -39,6 +39,7 @@ function solution(numer1, denom1, numer2, denom2) {
 
 ### [다항식 더하기]
 <br> 
+
 ![image](https://user-images.githubusercontent.com/38232501/233769610-78260094-4f69-4761-9cb2-0c2be5883415.png)
 
 
@@ -82,6 +83,7 @@ parseInt( ,10)을 통한 십진수 변환
 
 ### [최빈값 구하기]
 <br>
+
 ![image](https://user-images.githubusercontent.com/38232501/233836847-faa094f6-2298-41ea-9d11-28e6ba9967ab.png)
 
 
@@ -150,6 +152,7 @@ function solution(array) {
 
 ### [OX퀴즈]
 <br>
+
 ![image](https://user-images.githubusercontent.com/38232501/233836859-8b947def-d94d-4c9c-8d94-e22639a6e0f7.png)
 
 ```
@@ -172,7 +175,9 @@ split을 할 떄마다 비구조화 할당으로 배열에 넣어주는 것이 �
 a와 b 그리고 result애 +를 붙여준 것은 문자를 '정수'로 만들기 위해서이다.
 
 
-[다음에 올 숫자] <br>
+### [다음에 올 숫자] 
+<br>
+
 ![image](https://user-images.githubusercontent.com/38232501/233839857-f82563d5-302b-4a50-b7bf-eb82fc3e3816.png)
 
 ```
@@ -192,14 +197,56 @@ function solution(common) {
 }
 ```
 
+### [연속된 수의합]
+<br>
+
+![image](https://user-images.githubusercontent.com/38232501/233851642-2295cdae-cca8-4477-a1e5-aba7be22371d.png)
+
+총합을 수의 갯수를 나눈 것이 평균임을 활용하여 쉽게 풀었던 문제
+평균값을 구해준 다음 공차가 1인 등차수열임을 활용하여 배열에 넣어준 후 return 하였다.
+
+```
+function solution(num, total) {
+    ans = []; 
+    
+    num%2 === 0 ? 평균 = Math.floor(total / num)+1 : 평균 = Math.floor(total / num)
+    
+    for (i=0; i < num; i++) {
+        ans.push((평균 - Math.floor(num/2))+i)
+    }
+    return ans 
+}
+```
 
 
 
+### [겹치는 선분의 길이]
+<br>
 
+![image](https://user-images.githubusercontent.com/38232501/233851685-8a4d22cc-078c-4234-bafb-4ab075219c9a.png)
 
+생각했던 풀이방법은 맞았지만 2차원 배열의 값들을 어떻게 선분에 표시하는지가 어려웠던 문제..
+최소, 최대를 구하는 것이 아니라 각 속 배열의 좌측값과 우측값을 저장한 후
+그 길이에 맞춰 0으로 채워둔 배열에 +1씩을 해주면 됐다..
 
-
-
+```
+function solution(lines) {
+    const ans = new Array(200).fill(0)
+    
+    
+    for (i=0; i<3; i++) {
+        left = lines[i][0]
+        right = lines[i][1]
+        
+        for(j=left; j<right; j++) {
+            ans[j+100] += 1
+        }
+        
+    }
+    return ans.filter(v => v>=2).length
+    
+}
+```
 
 
 
