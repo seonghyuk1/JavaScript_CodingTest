@@ -165,6 +165,39 @@ split을 할 떄마다 비구조화 할당으로 배열에 넣어주는 것이 �
 
 여기서,
 a와 b 그리고 result애 +를 붙여준 것은 문자를 '정수'로 만들기 위해서이다.
+
+
+[다음에 올 숫자] <br>
+![image](https://user-images.githubusercontent.com/38232501/233839857-f82563d5-302b-4a50-b7bf-eb82fc3e3816.png)
+
+```
+function solution(common) {
+    // 공차수열 인지 공비수열인지를 파악하려면
+    // 적어도 3개 이상의 원소가 필요하다.
+
+    // 공차수열은 하나 떨어진 원소간의 차는 전부 같다.
+    
+    if (common[2] - common[1] === common[1] - common[0]) {
+        return common.pop() + common[1] - common[0]
+    } else {
+        return common.pop() * (common[1] / common[0]);
+        
+    }
+    
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
 ---
 ## 레벨1
 
