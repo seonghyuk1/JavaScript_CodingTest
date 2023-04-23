@@ -248,7 +248,44 @@ function solution(lines) {
 }
 ```
 
+### 평행 
+<br>
 
+![image](https://user-images.githubusercontent.com/38232501/233854091-c419f26b-7002-4c16-b48e-23731f88afb4.png)
+
+사실 소팅과는 상관없이 기울기를 구해주면 되는 문제
+한참을 고민하다가 드디어 오랜만에 생각이 났는데
+기울기는 x변화량과 y변화량으로 구한다
+
+즉, y변화량 / x변화량인데 (다른 선분 변화량이 같는가를 보기위해)
+
+길이가 정해진 dots이기에 함수를 구현해서 차이가 같은 것이 있다면 값을 올려주면 됐었다.
+이 부분에선 너무 오랜만이라.. 결국 그래프도 직접 그려보고 하다가 다른 분의 코드를 참고 했다
+
+```
+function solution(dots) {
+    answer = 0;
+    
+    // 기울기 y변화랑/x변화량
+    sol(dots[0], dots[1], dots[2], dots[3]) 
+    sol(dots[0], dots[3], dots[1], dots[2]) 
+    sol(dots[0], dots[2], dots[3], dots[1]) 
+    
+    return answer>0 ? 1 : 0
+}
+
+function sol(a, b, c, d) {
+    let abDiff, cdDiff;
+
+    abDiff = (b[1] - a[1]) / (b[0] - a[0]);
+    cdDiff = (d[1] - c[1]) / (d[0] - c[0]);
+
+    if (abDiff === cdDiff) {
+      answer += 1;
+    }
+}
+
+```
 
 ---
 ## 레벨1
