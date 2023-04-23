@@ -36,6 +36,8 @@ function solution(numer1, denom1, numer2, denom2) {
 <br>
 
 [다항식 더하기]
+![image](https://user-images.githubusercontent.com/38232501/233769610-78260094-4f69-4761-9cb2-0c2be5883415.png)
+
 
 ```
 function solution(polynomial) {
@@ -76,7 +78,7 @@ parseInt
 parseInt( ,10)을 통한 십진수 변환
 
 [최빈값 구하기] <br>
-![image](https://user-images.githubusercontent.com/38232501/233769610-78260094-4f69-4761-9cb2-0c2be5883415.png)
+![image](https://user-images.githubusercontent.com/38232501/233836847-faa094f6-2298-41ea-9d11-28e6ba9967ab.png)
 
 
 ```
@@ -142,8 +144,27 @@ function solution(array) {
 }
 ```
 
+[OX퀴즈] <br>
+![image](https://user-images.githubusercontent.com/38232501/233836859-8b947def-d94d-4c9c-8d94-e22639a6e0f7.png)
 
+```
+function solution(quiz) {
+    var answer = [];
+    return quiz.map(t => {
+        const [calc, result] = t.split(' = ');
+        const sign = calc.includes('+') ? 1 : -1
+        const [a, b] = calc.split(sign === 1 ? ' + ' : ' - ');
 
+        return +a + (+b * sign) === +result ? 'O' : 'X'
+    });
+}
+```
+
+return 시엔 양수로만 계산하되 사인을 곱해주는 형식으로 하셨다.
+split을 할 떄마다 비구조화 할당으로 배열에 넣어주는 것이 참 참신
+
+여기서,
+a와 b 그리고 result애 +를 붙여준 것은 문자를 '정수'로 만들기 위해서이다.
 ---
 ## 레벨1
 
