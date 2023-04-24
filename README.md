@@ -248,6 +248,42 @@ function solution(lines) {
 }
 ```
 
+### 옹알이 (1) 
+
+![image](https://user-images.githubusercontent.com/38232501/233972636-46b7320b-eeca-4801-912f-8f4a8b19702f.png)
+
+<br>
+
+내 풀이
+처음엔 순열을 사용한 permute로 생각하여 모든 경우의 수를 다 구하려 해보고 거기에 match하는 애들만을 사용하려 했지만 코드를 짤수록 너무 비효율적인 것 같아서 여러 풀이를 찾아보았다.
+
+```
+function solution(babbling) {
+
+    var 할줄아는말 = ["aya", "ye", "woo", "ma"];
+    var 얘가한말 = "";
+    var answer = 0;
+
+    for(var i=0; i<babbling.length; i++) {
+        // 애기가 하는 말의 각각을 문자열로 바꿔준 후
+        얘가한말 = babbling[i].toString();
+        
+        for(var j=0; j<할줄아는말.length; j++) {
+            // 얘가 하는 말들의 각각 (문자열)을 얘가 할줄아는말들과 같다면 다 공백으로 지워줌
+            // 할줄아는 말의 각각을 돌기때문에 조합이 이상하지 않은 이상 조합이 다 공백으로 바뀜
+            얘가한말 = 얘가한말.replaceAll(할줄아는말[j], ' ');    
+        }
+        
+        // 그렇게 공백으로 바뀐 얘가 한 말 중에 공백을 다 지운 후 길이가 0인 애들의 갯수만을 return
+        if(얘가한말.trim().length == 0) {
+            answer++;
+        }
+    }
+
+    return answer;
+}
+```
+
 ### 평행 
 <br>
 
